@@ -1,0 +1,20 @@
+<h3>Welcome to My Angular App</h3>
+<p>This is Task 1 in Angular application.</p>
+
+<h2>Section 1</h2>
+<p>Content of section 1 goes here.</p>
+
+<h2>Section 2</h2>
+<p>Content of section 2 goes here.</p>
+
+<p>This is a <span style="color: blue;">blue</span> word.</p>
+
+<div class="container">
+    <p>This is a paragraph inside a div.</p>
+</div>
+
+<!-- <input type="text" placeholder="Enter your name here">
+<br><br><br> -->
+
+<input type="text" [(ngModel)]="userInput" (input)="updateH1()" [ngStyle]="textboxStyles">
+<h1 [ngStyle]="paragraphStyles" >{{ userInput }}</h1>

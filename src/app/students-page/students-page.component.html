@@ -1,0 +1,28 @@
+<div  [ngStyle]="{ 'background-image': 'url(' + backgroundImageUrl + ')' }">
+<h1 [ngStyle]="headerStyles">students-page works!</h1>
+<table border="1" align="center">
+    <thead>
+      <th>Student Name</th>
+      <th>Email</th>
+      <th>Mark</th>
+      <th> PASS/ FAIL</th>
+    </thead>
+    <tbody *ngFor="let student of Students" >
+      <tr>
+        <td>
+          {{student.Name}}
+        </td>
+        <td>
+          {{student.Email}}
+        </td>
+        <td [ngClass]="{'green-text': student.Marks >= 50,'red-text':student.Marks<50 }">
+            {{student.Marks}}
+          </td>
+          <td [ngClass]="{'green-text': student.Marks >= 50,'red-text':student.Marks<50 }">
+            <div *ngIf="student.Marks > 50" class="pass-badge">PASS</div>
+        <div *ngIf="student.Marks <= 50" class="fail-badge">FAIL</div>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
